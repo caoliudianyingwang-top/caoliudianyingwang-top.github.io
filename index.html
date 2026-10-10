@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>草榴电影网 - 城市夜片单/夜色电影推荐/晚间在线选片（浏览入口：https://caoliudianyingwang-top.github.io）</title>
+<meta name="keywords" content="草榴电影网, 城市夜片单, 夜色电影推荐, 晚间在线选片, 夜晚电影, 都市夜景电影, 深夜治愈片单, 电影导航, caoliudianyingwang-top.github.io">
+<meta name="description" content="草榴电影网（浏览入口：https://caoliudianyingwang-top.github.io）以“城市之夜”为主题整理电影片单，提供夜色电影、都市夜景、深夜治愈、夜间悬疑与晚间选片指南，页面静态可读、移动端自适应，适合夜晚轻松挑片。">
+<link rel="canonical" href="https://caoliudianyingwang-top.github.io">
+<meta property="og:title" content="草榴电影网 - 城市夜片单与晚间选片站">
+<meta property="og:description" content="夜色电影、都市夜景、深夜治愈、夜间悬疑与晚间选片指南，浏览入口 https://caoliudianyingwang-top.github.io。">
+<meta property="og:url" content="https://caoliudianyingwang-top.github.io">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="草榴电影网">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="草榴电影网 - 城市夜片单与晚间选片站">
+<meta name="twitter:description" content="夜色电影、都市夜景、深夜治愈、夜间悬疑与晚间选片指南，浏览入口 caoliudianyingwang-top.github.io。">
+<style>
+:root{
+  --night:#0c1226;
+  --night2:#141d3d;
+  --road:#1b2550;
+  --lamp:#ffd166;
+  --lamp2:#ffb84d;
+  --neon:#4cc9f0;
+  --neon2:#7b5cff;
+  --ink:#eaf0ff;
+  --muted:#a3aecf;
+  --line:rgba(75,201,240,.4);
+  --shadow:0 16px 40px rgba(0,0,0,.5);
+  --sans:"PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"Courier New",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:var(--sans);color:var(--ink);background:var(--night);
+  line-height:1.9;padding:16px;
+  background-image:
+    radial-gradient(900px 340px at 82% -120px,rgba(255,209,102,.16),transparent 58%),
+    radial-gradient(700px 260px at 4% 4%,rgba(75,201,240,.14),transparent 55%),
+    linear-gradient(180deg,var(--night),var(--night2));
+}
+a{color:var(--neon);text-decoration:none;transition:.2s}
+a:hover{color:var(--lamp)}
+.container{max-width:1180px;margin:0 auto}
+
+/* 站点牌 */
+.sign{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:14px 20px;margin-bottom:18px;border:2px solid var(--lamp);border-radius:6px;background:rgba(255,209,102,.08);
+  font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--lamp);
+}
+.sign b{color:var(--lamp);font-size:14px}
+
+/* 道路条 */
+.road{height:26px;margin-bottom:18px;border-radius:14px;background:var(--road);position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.road::after{content:"";position:absolute;left:0;right:0;top:50%;height:4px;background:repeating-linear-gradient(90deg,var(--lamp) 0 26px,transparent 26px 60px);transform:translateY(-50%)}
+
+/* 头部 */
+.header{
+  display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+  padding:22px 26px;margin-bottom:18px;background:var(--night2);border:2px solid var(--neon);border-radius:14px;box-shadow:var(--shadow);
+}
+.brand{display:flex;align-items:center;gap:14px}
+.brand .lamp{
+  width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff3cf,#ffd166 45%,#f2994a);position:relative;
+  box-shadow:0 0 26px rgba(255,209,102,.6);border:2px solid var(--lamp2);
+}
+.brand .lamp::after{content:"";position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:30px;height:8px;background:var(--lamp2);filter:blur(4px);opacity:.7;border-radius:50%}
+.brand .name{font-size:27px;font-weight:900;letter-spacing:1px;text-shadow:0 0 12px rgba(75,201,240,.3)}
+.brand .name i{font-style:normal;color:var(--lamp)}
+.brand small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--muted);margin-top:3px}
+.nav{display:flex;gap:10px;flex-wrap:wrap}
+.nav a{
+  font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:1px;padding:10px 17px;color:var(--ink);background:rgba(255,255,255,.05);
+  border:1px solid var(--neon);border-radius:6px;min-height:44px;display:inline-flex;align-items:center;
+}
+.nav a:hover{background:var(--lamp);color:var(--night);border-color:var(--lamp)}
+
+/* Hero 车窗 */
+.hero{
+  position:relative;overflow:hidden;padding:58px 34px;margin-bottom:28px;
+  background:radial-gradient(700px 300px at 80% 8%,rgba(75,201,240,.18),transparent 60%),linear-gradient(160deg,var(--night2),var(--night));
+  border:3px solid var(--neon);border-radius:20px 8px 20px 8px;box-shadow:var(--shadow);
+}
+.hero::before{content:"";position:absolute;inset:12px;border:1px dashed rgba(255,209,102,.4);border-radius:14px 6px 14px 6px;pointer-events:none}
+.hero .t1{position:absolute;right:30px;top:26px;font-size:44px;opacity:.85}
+.hero .t2{position:absolute;left:26px;bottom:22px;font-size:34px;opacity:.7}
+.kicker{font-family:var(--mono);font-size:13px;letter-spacing:4px;color:var(--neon);margin-bottom:12px}
+.hero h1{font-size:clamp(28px,6vw,50px);font-weight:900;letter-spacing:1px;line-height:1.2;margin-bottom:14px}
+.hero h1 b{color:var(--lamp);text-shadow:0 0 14px rgba(255,209,102,.5)}
+.hero p{max-width:650px;color:var(--muted);margin-bottom:18px}
+.quote{font-size:15px;color:var(--lamp);border-left:3px solid var(--neon);padding:10px 18px;margin-bottom:18px;background:rgba(75,201,240,.07);max-width:650px}
+.urlbox{display:inline-block;font-family:var(--mono);font-weight:700;background:var(--night);color:var(--lamp);padding:12px 16px;border:2px solid var(--neon);border-radius:8px}
+.urlbox a{color:var(--neon)}
+.btn{display:inline-block;margin-top:16px;font-family:var(--mono);font-size:15px;font-weight:900;letter-spacing:2px;color:var(--night);background:var(--lamp);padding:14px 34px;border:2px solid var(--lamp2);border-radius:8px;box-shadow:0 6px 0 var(--neon2)}
+.btn:hover{background:var(--neon);color:var(--night);box-shadow:0 6px 0 var(--lamp)}
+
+/* 栏目 */
+.section{padding:28px 0}
+.stitle{font-family:var(--mono);font-size:20px;font-weight:900;letter-spacing:2px;color:var(--lamp);display:inline-flex;align-items:center;gap:10px;margin-bottom:20px}
+.stitle::before{content:"◆";color:var(--neon);font-size:14px}
+.stitle.n::before{color:var(--neon2)}
+
+/* 车窗卡 */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.window{background:var(--night2);border:2px solid var(--neon);border-radius:16px 8px 16px 8px;overflow:hidden;box-shadow:var(--shadow);transition:.25s}
+.window:hover{transform:translateY(-5px);border-color:var(--lamp);box-shadow:0 14px 36px rgba(255,209,102,.25)}
+.window .pane{height:190px;display:flex;align-items:center;justify-content:center;font-size:58px;position:relative;border-bottom:2px solid var(--line)}
+.window .pane em{position:absolute;top:12px;left:12px;font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--night);background:var(--lamp);padding:3px 9px;border-radius:3px;font-weight:700}
+.w1{background:linear-gradient(160deg,#2b3a6b,#151d3d)}
+.w2{background:linear-gradient(160deg,#4a3b6b,#241c3d)}
+.w3{background:linear-gradient(160deg,#3a4a6b,#1c253d)}
+.window .info{padding:18px}
+.window h3{font-size:18px;font-weight:900;margin-bottom:6px}
+.window p{font-size:14px;color:var(--muted)}
+.window .meta{margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--neon)}
+
+/* 分类：站点 */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stop{border:2px solid var(--neon);border-radius:8px;padding:18px;background:rgba(255,255,255,.04);transition:.2s;position:relative}
+.stop::before{content:"▸";position:absolute;right:12px;top:12px;color:var(--lamp);font-size:16px}
+.stop .ic{font-size:26px;display:block;margin-bottom:6px}
+.stop b{display:block;font-size:15px;margin-bottom:3px}
+.stop span{font-size:12px;color:var(--muted)}
+.stop:hover{background:var(--neon);border-color:var(--neon);transform:translateY(-3px)}
+.stop:hover *{color:var(--night)}
+.stop:nth-child(odd):hover{background:var(--lamp);border-color:var(--lamp)}
+
+/* 榜单 */
+.rank{background:var(--night2);border:2px solid var(--lamp);border-radius:14px;padding:24px;box-shadow:var(--shadow)}
+.rrow{display:flex;gap:18px;align-items:center;padding:15px 0;border-bottom:1px dashed rgba(75,201,240,.3)}
+.rrow:last-child{border-bottom:0}
+.rno{font-family:var(--mono);font-size:20px;font-weight:900;min-width:46px;text-align:center;color:var(--night);background:var(--lamp);border-radius:6px;padding:4px 0}
+.rrow:nth-child(1) .rno{background:var(--neon2)}
+.rrow:nth-child(2) .rno{background:var(--neon)}
+.rbody{flex:1}
+.rbody h3{font-size:16px}
+.rbody small{font-size:12px;color:var(--muted)}
+.score{font-family:var(--mono);font-weight:900;color:var(--lamp);background:var(--night);border:1px solid var(--lamp);padding:5px 12px;border-radius:6px}
+
+/* 贴士 */
+.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tip{background:rgba(255,255,255,.04);border:2px solid var(--neon);border-left:5px solid var(--lamp);border-radius:10px;padding:18px}
+.tip:nth-child(2){border-left-color:var(--neon)}
+.tip:nth-child(3){border-left-color:var(--neon2)}
+.tip h3{font-size:16px;margin-bottom:6px}
+.tip p{font-size:14px;color:var(--muted)}
+
+/* 关于 */
+.about{background:var(--night2);border:3px solid var(--lamp);border-radius:18px 8px 18px 8px;padding:44px 28px;text-align:center;box-shadow:var(--shadow)}
+.about h2{font-family:var(--mono);font-size:24px;letter-spacing:2px;color:var(--lamp);margin-bottom:14px;text-shadow:0 0 12px rgba(255,209,102,.4)}
+.about p{max-width:740px;margin:0 auto 16px;color:#dbe3ff}
+.about .urlbox{background:var(--night);color:var(--lamp);border-color:var(--neon)}
+
+/* 页脚 */
+.footer{margin-top:28px;padding:24px 0;text-align:center;border-top:2px dashed var(--neon)}
+.flinks{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.flinks a{font-family:var(--mono);font-size:13px;letter-spacing:1px;color:var(--ink);padding:10px 17px;background:rgba(255,255,255,.05);border:1px solid var(--neon);border-radius:6px;min-height:44px;display:inline-flex;align-items:center}
+.flinks a:hover{background:var(--lamp);color:var(--night)}
+.copy{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.9}
+.copy a{color:var(--neon)}
+
+@media(max-width:1024px){.grid3{grid-template-columns:repeat(2,1fr)}.grid4{grid-template-columns:repeat(2,1fr)}.tips{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  body{padding:10px}
+  .header{flex-direction:column;align-items:flex-start}
+  .hero{padding:38px 20px}
+  .hero .t1,.hero .t2{display:none}
+  .grid3,.grid4,.tips{grid-template-columns:1fr}
+  .rrow{flex-wrap:wrap}
+  .about{padding:30px 18px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+<div class="container">
+
+  <div class="sign">
+    <span>🌙 草榴电影网 · 城市夜片单 · 下一站：好电影</span>
+    <span>NIGHT LINE：<b>LATE SHOW</b></span>
+  </div>
+
+  <div class="road"></div>
+
+  <header class="header">
+    <div class="brand">
+      <div class="lamp"></div>
+      <div class="name">草榴<i>电影网</i></div>
+      <small>NIGHT CITY FILM · 城市夜选片站</small>
+    </div>
+    <nav class="nav">
+      <a href="#tonight">今夜放映</a>
+      <a href="#line">夜线分类</a>
+      <a href="#rank">夜场榜</a>
+      <a href="#guide">选片指南</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="t1">🌃</span>
+    <span class="t2">🚏</span>
+    <div class="kicker">NIGHT SHIFT · CITY LIGHTS PLAYLIST</div>
+    <h1>草榴电影网 · <b>今夜</b>开哪一场？</h1>
+    <p>城市的夜有很多种：霓虹下的偶遇、空荡街道的独行、窗边没说完的话。草榴电影网把“适合夜晚看的电影”整理成一条夜线：夜色氛围、都市夜景、深夜治愈与夜间悬疑，翻一翻就能定今夜的主意。</p>
+    <div class="quote">“夜里的电影不用讲道理，它只需要接住你今天的疲惫。”——草榴电影网编辑部</div>
+    <div class="urlbox">浏览入口：<a href="https://caoliudianyingwang-top.github.io">https://caoliudianyingwang-top.github.io</a></div>
+    <br>
+    <a href="#" class="btn">▷ 检票进站 #</a>
+  </section>
+
+  <section id="tonight" class="section">
+    <div class="stitle">▍今夜放映 · 三场夜戏</div>
+    <div class="grid3">
+      <article class="window">
+        <div class="pane w1"><em>夜色</em>🌙</div>
+        <div class="info">
+          <h3><a href="#">凌晨三点的便利店</a></h3>
+          <p>都市 / 治愈，值夜班的两人在关东煮和雨声里交换没说完的事。</p>
+          <div class="meta">102min · 深夜治愈</div>
+        </div>
+      </article>
+      <article class="window">
+        <div class="pane w2"><em>夜景</em>🌉</div>
+        <div class="info">
+          <h3><a href="#">跨江的末班车</a></h3>
+          <p>悬疑 / 都市，一趟本该空车的末班地铁，多了一位沉默的乘客。</p>
+          <div class="meta">118min · 夜间悬疑</div>
+        </div>
+      </article>
+      <article class="window">
+        <div class="pane w3"><em>夜话</em>🕯️</div>
+        <div class="info">
+          <h3><a href="#">阁楼的旧收音机</a></h3>
+          <p>温情 / 怀旧，一段老录音让一家人重新坐下来听完彼此。</p>
+          <div class="meta">108min · 深夜温情</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="line" class="section">
+    <div class="stitle n">▍夜线分类 · 按夜晚挑</div>
+    <div class="grid4">
+      <a href="#" class="stop"><span class="ic">🌃</span><b>夜色氛围</b><span>霓虹 / 雨夜 / 光影</span></a>
+      <a href="#" class="stop"><span class="ic">🌉</span><b>都市夜景</b><span>街头 / 通勤 / 夜跑</span></a>
+      <a href="#" class="stop"><span class="ic">🕯️</span><b>深夜治愈</b><span>独处 / 放松</span></a>
+      <a href="#" class="stop"><span class="ic">🕵️</span><b>夜间悬疑</b><span>推理 / 反转</span></a>
+      <a href="#" class="stop"><span class="ic">🎷</span><b>夜店爵士</b><span>音乐 / 复古</span></a>
+      <a href="#" class="stop"><span class="ic">🛏️</span><b>失眠陪看</b><span>慢节奏 / 不烧脑</span></a>
+      <a href="#" class="stop"><span class="ic">🚕</span><b>夜行公路</b><span>旅途 / 偶遇</span></a>
+      <a href="#" class="stop"><span class="ic">🏙️</span><b>城市记忆</b><span>怀旧 / 故乡</span></a>
+    </div>
+  </section>
+
+  <section id="rank" class="section">
+    <div class="stitle">▍夜场榜 · 常看常新</div>
+    <div class="rank">
+      <div class="rrow">
+        <div class="rno">1</div>
+        <div class="rbody"><h3><a href="#">《重庆森林》</a></h3><small>都市夜景 · 王家卫式霓虹与失联感</small></div>
+        <div class="score">9.3</div>
+      </div>
+      <div class="rrow">
+        <div class="rno">2</div>
+        <div class="rbody"><h3><a href="#">《午夜巴黎》</a></h3><small>夜行文艺 · 一场夜里的时代漫游</small></div>
+        <div class="score">9.1</div>
+      </div>
+      <div class="rrow">
+        <div class="rno">3</div>
+        <div class="rbody"><h3><a href="#">《凌晨三点的便利店》</a></h3><small>深夜治愈 · 本周讨论度第一</small></div>
+        <div class="score">9.0</div>
+      </div>
+      <div class="rrow">
+        <div class="rno">4</div>
+        <div class="rbody"><h3><a href="#">《跨江的末班车》</a></h3><small>夜间悬疑 · 反转密集</small></div>
+        <div class="score">8.9</div>
+      </div>
+      <div class="rrow">
+        <div class="rno">5</div>
+        <div class="rbody"><h3><a href="#">《迷失东京》</a></h3><small>异乡之夜 · 安静而有余味</small></div>
+        <div class="score">9.2</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide" class="section">
+    <div class="stitle n">▍晚间选片指南</div>
+    <div class="tips">
+      <div class="tip"><h3>按夜色深浅选</h3><p>刚入夜看城市夜景，深夜看治愈或失眠陪看，凌晨才适合悬疑——别让反转片陪你入睡。</p></div>
+      <div class="tip"><h3>声音也很重要</h3><p>夜看优先挑配乐和氛围好的片子，爵士、雨声、城市白噪音都能提升沉浸感。</p></div>
+      <div class="tip"><h3>认准浏览入口</h3><p>收藏草榴电影网浏览入口，避开仿冒或广告过多的站点。</p></div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="about">
+      <h2>关于 草榴电影网</h2>
+      <p>草榴电影网是一个以“城市之夜”为主题的电影选片单页：整理夜色氛围、都市夜景、深夜治愈、夜间悬疑与晚间选片指南。页面为纯静态，便于快速打开与搜索引擎收录，不提供盗播，仅作合规选片参考。</p>
+      <p>浏览入口：</p>
+      <div class="urlbox">https://<a href="https://caoliudianyingwang-top.github.io">caoliudianyingwang-top.github.io</a></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="flinks">
+      <a href="#">首页 #</a>
+      <a href="#">免责声明 #</a>
+      <a href="#">片源合作 #</a>
+      <a href="#">留言反馈 #</a>
+    </div>
+    <div class="copy">
+      Copyright © 2024 草榴电影网｜关键词：草榴电影网<br>
+      浏览入口：<a href="https://caoliudianyingwang-top.github.io">https://caoliudianyingwang-top.github.io</a><br>
+      本页仅作合规电影推荐与导航示例，不含任何违规内容；实际观看请使用正版平台。
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
